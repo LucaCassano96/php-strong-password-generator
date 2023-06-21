@@ -20,30 +20,54 @@ Gestire ulteriori parametri per la password dando all'utente la possibilita' di 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+
+
 </head>
 <body>
 
+
+<form>
+
+    <label for="password">password</label>
+    <input type="number" name="password" id="password">
+    <br>
+    <br>
+
+
+    <label for="numeri">numeri</label>
+    <input type="checkbox" name="numeri"> <br>
+
+    <label for="lettere_Maiuscole">lettere Maiuscole</label>
+    <input type="checkbox" name="lettere_Maiuscole"> <br>
+
+    <label for="lettere_minuscole">lettere minuscole</label>
+    <input type="checkbox" name="lettere_minuscole"> <br>
+
+    <label for="simboli">simboli</label>
+    <input type="checkbox" name="simboli"> <br> 
+
+    <input type="submit"> <br> <br>
+</form>
+
+
+
 <?php
-$password = "";
-for ($i=0; $i < 10 ; $i++) { 
+include "./function.php";
 
-    $letter = chr(rand(33,126));
+$PasswordLenght = $_GET["password"];
 
-    $password = $password . $letter;
-
-    
-
-};
-
-echo $password; 
+$numeri = $_GET["numeri"];
+$lettere_Maiuscole = $_GET["lettere_Maiuscole"];
+$lettere_minuscole = $_GET["lettere_minuscole"];
+$simboli = $_GET["simboli"];
 
 
-
-
-
+passwordGenerator($PasswordLenght, $numeri, $lettere_Maiuscole, $lettere_minuscole, $simboli);
 
 
 ?>
-    
+
+
+     
 </body>
 </html>
