@@ -27,8 +27,11 @@ Gestire ulteriori parametri per la password dando all'utente la possibilita' di 
 $password = "";
 for ($i=0; $i < 10 ; $i++) { 
 
-    $rndomNum = (string) rand(0, 9);
-    $password = $password . $rndomNum;
+    $letter = chr(rand(33,126));
+
+    $password = $password . $letter;
+
+    
 
 };
 
